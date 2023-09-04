@@ -14,8 +14,8 @@
                     <thead>
                         <tr>
                           <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">ID</th>
-                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">First Name</th>
-                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7 ps-2">Last Name</th>
+                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">Name</th>
+                          
                           <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Email</th>
                           <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Role</th>
                           <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Actions</th>
@@ -26,20 +26,14 @@
                         @foreach($users as $user)
                         <tr>
                             <td>{{ $user->id }}</td>
-                            <td>{{ $user->first_name }}</td>
-                            <td>{{ $user->last_name }}</td>
+                            <td>{{ $user->name }}</td>
+                            
                             <td class="text-center">{{ $user->email }}</td>
                             <td class="text-center">User</td>
                             <td class="text-center">
-                                <a href="{{ route('edit.user', ['id' => $user->id]) }}" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-edit"></i> Edit
+                                
                                 </a>
-                                <form method="POST" action="{{ route('delete.user', ['id' => $user->id]) }}" class="d-inline">
-                                    @csrf
-                                    @method('DELETE') <!-- Use DELETE method here -->
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i> Delete
-                                    </button>
+                                 
                                 </form>
                             </td>
                         </tr>

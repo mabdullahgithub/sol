@@ -8,8 +8,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <title>
-    Material Dashboard 2 by Creative Tim
-  </title>
+SolGenius  </title>
 <!-- Fonts and icons -->
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
 
@@ -42,7 +41,7 @@
     <div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link text-white" href="{{ route('admin') }}">
+          <a class="nav-link text-white" href="{{ route('dashboard') }}">
               <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
                   <i class="material-icons opacity-10">dashboard</i>
               </div>
@@ -51,7 +50,7 @@
       </li>
       
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{ route('admin.users') }}">
+          <a class="nav-link text-white " href="{{ route('admin.viewuser') }}">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
               <i class="material-icons opacity-10">table_view</i>
             </div>
@@ -230,13 +229,45 @@
               </ul>
             </li>
             <li class="nav-item d-flex align-items-center">
-              <a href="../pages/sign-in.html" class="nav-link text-body font-weight-bold px-0">
+              <a href="" class="nav-link text-body font-weight-bold px-0">
                 <i class="fa fa-user me-sm-1"></i>
-                <span class="d-sm-inline d-none">Sign In</span>
-              </a>
+            
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+                <div class="dropdown-menu bg-light m-0 dropdown-menu-end">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                       onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+                  
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </div>
+            </a>
+            
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <!-- End Navbar -->
+
+<style>
+  .nav-link {
+    color: #007BFF; /* Change to your desired text color */
+}
+.dropdown-menu {
+    background-color: #f0f0f0; /* Change to your desired background color */
+}
+.fa {
+    color: #007BFF; /* Change to your desired icon color */
+}
+
+</style>
+
+
+    

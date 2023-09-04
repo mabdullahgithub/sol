@@ -162,41 +162,35 @@
             <div class="card-body px-0 pb-2">
               <div class="table-responsive p-0">
                 <table class="table align-items-center mb-0">
-                    <thead>
-                        <tr>
-                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">ID</th>
-                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">First Name</th>
-                          <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7 ps-2">Last Name</th>
-                          <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Email</th>
-                          <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Role</th>
+                  <thead>
+                      <tr>
+                        <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">ID</th>
+                        <th class="text-uppercase text-secondary text-lg font-weight-bold opacity-7">Name</th>
+                        
+                        <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Email</th>
+                        <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Role</th>
+                        <th class="text-center text-uppercase text-secondary text-lg font-weight-bold opacity-7">Actions</th>
+                        
+                      </tr>
+                  </thead>
+                  <tbody>
+                      @foreach($users as $user)
+                      <tr>
+                          <td>{{ $user->id }}</td>
+                          <td>{{ $user->name }}</td>
                           
-                          
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($users as $user)
-                        <tr>
-                            <td>{{ $user->id }}</td>
-                            <td>{{ $user->first_name }}</td>
-                            <td>{{ $user->last_name }}</td>
-                            <td class="text-center">{{ $user->email }}</td>
-                            <td class="text-center">User</td>
-                            {{-- <td class="text-center">
-                                <a href="{{ route('edit.user', ['id' => $user->id]) }}" class="btn btn-sm btn-primary">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <form method="POST" action="{{ route('delete.user', ['id' => $user->id]) }}" class="d-inline">
-                                    @csrf
-                                    @method('DELETE') <!-- Use DELETE method here -->
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="fas fa-trash"></i> Delete
-                                    </button> --}}
-                                </form>
-                            </td>
-                        </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                          <td class="text-center">{{ $user->email }}</td>
+                          <td class="text-center">User</td>
+                          <td class="text-center">
+                              
+                              </a>
+                               
+                              </form>
+                          </td>
+                      </tr>
+                      @endforeach
+                  </tbody>
+              </table>
             </div>
             </div>
           </div>
@@ -275,31 +269,9 @@
         <div class="container-fluid">
           <div class="row align-items-center justify-content-lg-between">
             <div class="col-lg-6 mb-lg-0 mb-4">
-              <div class="copyright text-center text-sm text-muted text-lg-start">
-                © <script>
-                  document.write(new Date().getFullYear())
-                </script>,
-                made with <i class="fa fa-heart"></i> by
-                <a href="https://www.creative-tim.com" class="font-weight-bold" target="_blank">Creative Tim</a>
-                for a better web.
-              </div>
+              
             </div>
-            <div class="col-lg-6">
-              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com" class="nav-link text-muted" target="_blank">Creative Tim</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/presentation" class="nav-link text-muted" target="_blank">About Us</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/blog" class="nav-link text-muted" target="_blank">Blog</a>
-                </li>
-                <li class="nav-item">
-                  <a href="https://www.creative-tim.com/license" class="nav-link pe-0 text-muted" target="_blank">License</a>
-                </li>
-              </ul>
-            </div>
+          
           </div>
         </div>
       </footer>
@@ -312,7 +284,7 @@
     <div class="card shadow-lg">
       <div class="card-header pb-0 pt-3">
         <div class="float-start">
-          <h5 class="mt-3 mb-0">Material UI Configurator</h5>
+          <h5 class="mt-3 mb-0">Sol Genius Nav Configration</h5>
           <p>See our dashboard options.</p>
         </div>
         <div class="float-end mt-4">
@@ -363,19 +335,7 @@
             <input class="form-check-input mt-1 ms-auto" type="checkbox" id="dark-version" onclick="darkMode(this)">
           </div>
         </div>
-        <hr class="horizontal dark my-sm-4">
-        <a class="btn bg-gradient-info w-100" href="https://www.creative-tim.com/product/material-dashboard-pro">Free Download</a>
-        <a class="btn btn-outline-dark w-100" href="https://www.creative-tim.com/learning-lab/bootstrap/overview/material-dashboard">View documentation</a>
-        <div class="w-100 text-center">
-          <a class="github-button" href="https://github.com/creativetimofficial/material-dashboard" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star creativetimofficial/material-dashboard on GitHub">Star</a>
-          <h6 class="mt-3">Thank you for sharing!</h6>
-          <a href="https://twitter.com/intent/tweet?text=Check%20Material%20UI%20Dashboard%20made%20by%20%40CreativeTim%20%23webdesign%20%23dashboard%20%23bootstrap5&amp;url=https%3A%2F%2Fwww.creative-tim.com%2Fproduct%2Fsoft-ui-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-twitter me-1" aria-hidden="true"></i> Tweet
-          </a>
-          <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.creative-tim.com/product/material-dashboard" class="btn btn-dark mb-0 me-2" target="_blank">
-            <i class="fab fa-facebook-square me-1" aria-hidden="true"></i> Share
-          </a>
-        </div>
+      
       </div>
     </div>
   </div>
