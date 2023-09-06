@@ -49,14 +49,26 @@ SolGenius  </title>
           </a>
       </li>
       
+       
         <li class="nav-item">
-          <a class="nav-link text-white " href="{{ route('admin.viewuser') }}">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">table_view</i>
-            </div>
-            <span class="nav-link-text ms-1">View Users</span>
+          <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#manage-users" aria-expanded="true">
+              <div class="text-white text-center d-flex align-items-center">
+                  <img src="{{ asset('admin_assets/img/icons8-users-24.png') }}" alt="Logo" class="me-2" width="20" height="20">
+                  <span>Manage Users</span>
+              </div>
           </a>
-        </li>
+          <div class="collapse show" id="manage-users">
+              <ul class="nav flex-column ms-3">
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="#">Create Users</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="{{ route('admin.viewuser') }}">View Users</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      
         {{-- <li class="nav-item">
           <a class="nav-link text-white " href="../pages/billing.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
@@ -101,13 +113,26 @@ SolGenius  </title>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white " href="../pages/sign-in.html">
-            <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
-              <i class="material-icons opacity-10">login</i>
-            </div>
-            <span class="nav-link-text ms-1">Sign in</span>
+          <a class="nav-link text-white" href="#" data-bs-toggle="collapse" data-bs-target="#manage-products" aria-expanded="true">
+              <div class="text-white text-center d-flex align-items-center">
+                  <img src="{{ asset('admin_assets/img/icons8-inventory-64.png') }}" alt="Logo" class="me-2" width="20" height="20">
+                  <span>Manage Products</span>
+              </div>
           </a>
-        </li>
+          <div class="collapse show" id="manage-products">
+              <ul class="nav flex-column ms-3">
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('admin.create_products') }}">Create Products</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="{{ route('admin.view_products') }}">View Products</a>
+                  </li>
+              </ul>
+          </div>
+      </li>
+      
+      
+      
         <li class="nav-item">
           <a class="nav-link text-white " href="../pages/sign-up.html">
             <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">

@@ -33,5 +33,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [SuperAdminController::class, 'Dashboard'])->name('dashboard');
     Route::get('/view_user', [SuperAdminController::class, 'ViewUser'])->name('admin.viewuser');
 
+    Route::get('/create_products', [SuperAdminController::class, 'CreateProducts'])->name('admin.create_products');
+    Route::post('/create_products', [SuperAdminController::class, 'storeProduct'])->name('admin.store_product');
+
+    Route::get('/view_products', [SuperAdminController::class, 'ViewProducts'])->name('admin.view_products');
+
     
 });
