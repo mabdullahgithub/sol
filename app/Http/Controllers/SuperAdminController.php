@@ -37,6 +37,7 @@ class SuperAdminController extends Controller
 
     public function storeProduct(Request $request)
     {
+        
         // Store the product data without validation for simplicity
         $product = new Product([
             'title' => $request->input('title'),

@@ -27,10 +27,11 @@
                         @foreach($products as $product)
                         <tr>
                             <td>{{ $product->id }}</td>
-                            <td><img src="{{ $product->image }}" /></td>
-                            
-                            <td class="text-center">{{ $product->title }}</td>
-                            <td class="text-center">{{ $product->description }}</td>
+                            <td style="max-width: 5%">
+                              <img src="{{ asset('storage/' . $product->image) }}" style="max-width: 50px;" />
+                          </td>                            
+                            <td class="text-center" style="white-space: normal;">{{ $product->title }}</td>
+                            <td class="text-center" style="white-space: normal;">{{ $product->description }}</td>
                             <td class="text-center">{{ $product->price }}</td>
                             <td class="text-center">{{ $product->category }}</td>
                             <td class="text-center">Pending</td>

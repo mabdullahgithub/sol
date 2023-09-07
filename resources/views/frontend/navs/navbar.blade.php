@@ -108,6 +108,8 @@
                 </div> --}}
 
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('frontend.products') }}" class="nav-item nav-link">Product</a>
+
             </div>
             <a href="{{ route('frontend.quote') }}" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">
                 Get Your Estimate <i class="fa fa-arrow-right ms-3"></i>

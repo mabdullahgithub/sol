@@ -24,6 +24,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/index', [FrontController::class, 'index'])->name('frontend.index');
     Route::get('/quotation', [FrontController::class, 'qoute'])->name('frontend.quote');
+    Route::get('/product', [FrontController::class, 'Product'])->name('frontend.products');
+
 });
 
 
@@ -40,3 +42,13 @@ Route::middleware(['auth'])->group(function () {
 
     
 });
+
+Route::get('/storage/{path}', function ($path) {
+    $filePath = storage_path('app/public/' . $path);
+
+    if (!file_exists($filePath)) {
+        abort(404);
+    }
+
+    return response()->file($filePath);
+})->where('path', '.*');
